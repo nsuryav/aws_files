@@ -12,11 +12,11 @@ resource "aws_instance" "my_ec2" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = "t3.micro" 
 
-  vpc_security_group_ids = [aws_security_group.sann_ssh.id]
+  vpc_security_group_ids = [aws_security_group.sandy_ssh.id]
 }
 
-resource "aws_security_group" "sann_ssh" {
-  name        = "sann_ssh"
+resource "aws_security_group" "sandy_ssh" {
+  name        = "sandy_ssh"
   description = "Allow SSH inbound traffic"
   vpc_id      = data.aws_vpc.default.id
 
